@@ -56,6 +56,8 @@ def handle_command(command):
     elif command in ['date', 'what date is it', 'tell me the date', 'today\'s date', 'current date']:
         current_date = datetime.datetime.now().strftime('%A, %B %d, %Y')
         speak(f'Today is {current_date}')
+    elif command in ['help', 'list of commands', 'what can you do']:
+        speak('I can only help you with a limited set of tasks, like telling date, time and searching web for now.')
     elif 'search' in command or 'search for' in command:
         query = command.replace('search', '').replace('for', '').strip()
         if query:
